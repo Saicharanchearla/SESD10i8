@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>University Library Management System - Assignment Summary</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; background-color: #f6fcff;}
+        h1, h2 { color: #234986; }
+        ul { margin-left: 22px; }
+        .section { margin-bottom: 36px; padding: 20px; background: #edf3fa; border-radius: 6px; border: 1px solid #c7d3ee;}
+        .entity { background: #fefefe; border: 1px solid #bcd8de; padding: 12px; margin-bottom: 16px; border-radius: 4px;}
+        .abstract { color: #115029; font-style: italic;}
+        .private { color: #994400; font-style: italic;}
+        .example { color: #49608b;}
+    </style>
+</head>
+<body>
+    <h1>University Library Management System – Abstraction and Information Hiding</h1>
+
+    <div class="section">
+        <h2>Abstract Entities</h2>
+        <div class="entity">
+            <strong>Book</strong><br>
+            Represents each item in the library’s collection.<br>
+        </div>
+        <div class="entity">
+            <strong>Student</strong><br>
+            Represents library users who search, borrow, and return books.<br>
+        </div>
+        <div class="entity">
+            <strong>Librarian</strong><br>
+            Represents the staff who manage the library and its operations.<br>
+        </div>
+        <div class="entity">
+            <strong>BorrowRecord</strong><br>
+            Tracks borrowing transactions, linking books and students with dates and fine details.<br>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Use of Abstraction</h2>
+        <ul>
+            <li><span class="abstract">Book abstraction:</span> When students search for books, only key info like title, author, and category is provided. Details like publisher, edition, and ISBN are hidden from students for simplicity.</li>
+            <li><span class="abstract">Student abstraction:</span> Students see their own names, borrowed book list, and due notifications, but do not see others' fines or full histories.</li>
+            <li><span class="abstract">Librarian abstraction:</span> Only necessary details (name, duties) are visible to the public. Their credentials and authority are kept out of view.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Information Hiding for Sensitive Data</h2>
+        <ul>
+            <li><span class="private">Librarian credentials:</span> Accessible only to the relevant authorized individual, never shown to other users.</li>
+            <li><span class="private">Student fines:</span> Only the student concerned and librarians can view or modify fines. Fines remain hidden from other students and the public.</li>
+            <li><span class="private">BorrowRecord privacy:</span> Fine details and borrowing history access is strictly restricted to authorized roles only.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Examples of Concepts</h2>
+        <ul>
+            <li class="example">A student searches for “Data Science” books. They see the list of matching titles and authors, but not the ISBNs or publisher details.</li>
+            <li class="example">The librarian logs in (using hidden credentials) and removes outdated books, adds new arrivals, or updates fines for overdue books.</li>
+            <li class="example">Only the librarian and the concerned student can see fine details or pay/resolve fines via a secure interface.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Summary Table: Abstraction and Information Hiding</h2>
+        <table border="1" cellpadding="6" cellspacing="0" style="background:#fff;">
+            <tr>
+                <th>Entity</th>
+                <th>Exposed Details (Abstracted)</th>
+                <th>Hidden Details (Information Hiding)</th>
+            </tr>
+            <tr>
+                <td>Book</td>
+                <td>Title, Author, Category</td>
+                <td>Publisher, Edition, ISBN</td>
+            </tr>
+            <tr>
+                <td>Student</td>
+                <td>Name, Borrowed books, Due notifications</td>
+                <td>Fines, Full borrowing history</td>
+            </tr>
+            <tr>
+                <td>Librarian</td>
+                <td>Name, Duties</td>
+                <td>Login credentials, Permissions</td>
+            </tr>
+            <tr>
+                <td>BorrowRecord</td>
+                <td>Borrow/Return dates, Student-Book link</td>
+                <td>Fine details (restricted access)</td>
+            </tr>
+        </table>
+    </div>
+
+    <hr>
+    <div>
+        <p><strong>This file summarizes the abstract entities, abstraction, and information hiding principles as applied in a computerized university library system for your assignment.</strong></p>
+    </div>
+</body>
+</html>
